@@ -1,4 +1,4 @@
-import { rest } from 'msw';
+import { HttpResponse, http } from 'msw'; 
 import articlesData from './articles.json';
 import commentsData from './comments.json';
 
@@ -13,11 +13,9 @@ function mockDelay(milliseconds) {
 }
 
 export const handlers = [
-  rest.get('/api/articles', (req, res, ctx) => {
+  http.get('/api/articles', () => {
     mockDelay(500);
-    return res(
-      ctx.status(200),
-      ctx.json(
+    return HttpResponse.json(
         articlesData.map((article) => ({
           id: article.id,
           title: article.title,
@@ -25,47 +23,48 @@ export const handlers = [
           image: article.image,
         }))
       )
-    );
+    
   }),
-  rest.get('/api/articles/:articleId', (req, res, ctx) => {
+  http.get('/api/articles/:articleId', ({params}) => {
     mockDelay(500);
-    const { articleId } = req.params;
-    return res(
-      ctx.status(200),
-      ctx.json(
+    const { articleId } = params;
+    return HttpResponse.json(
         articlesData.find((article) => article.id === parseInt(articleId))
-      )
-    );
+    )
+    
   }),
-  rest.get('/api/articles/:articleId/comments', (req, res, ctx) => {
+  http.get('/api/articles/:articleId/comments', ({params}) => {
     mockDelay(500);
-    const { articleId } = req.params;
+    const { articleId } = params;
     const userCommentsForArticle = userComments[articleId] || [];
-    return res(
-      ctx.status(200),
-      ctx.json({
+    return HttpResponse.json({
         articleId: parseInt(articleId),
         comments: commentsData
           .filter((comment) => comment.articleId === parseInt(articleId))
           .concat(userCommentsForArticle),
       })
-    );
-  }),
-  rest.post('/api/articles/:articleId/comments', (req, res, ctx) => {
+    
+  }
+  ),
+  http.post('/api/articles/:articleId/comments',async ({params, request}) => {
     mockDelay(500);
-    const { articleId } = req.params;
+    const { articleId } = params;
+    const body = await request.json()
+    console.log('hey')
+    console.log(parseInt(articleId))
+    console.log(body)
     const commentResponse = {
       id: commentsData.length,
       articleId: parseInt(articleId),
-      text: JSON.parse(req.body).comment,
+      text: body.comment,
     };
 
     if (userComments[articleId]) {
-      userComments[articleId].push(commentResponse);
+      userComments[articleId].push(commentResponse); 
     } else {
       userComments[articleId] = [commentResponse];
     }
 
-    return res(ctx.status(200), ctx.json(commentResponse));
+    return HttpResponse.json(commentResponse,{ status: 201 });
   }),
 ];

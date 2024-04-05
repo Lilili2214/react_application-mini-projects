@@ -54,5 +54,26 @@
     "preview": "Even locked up in a detention center on the outskirts of Moscow, Kremlin critic Alexey Navalny continues to be a thorn in Russian President Vladimir Putin's side.",
     "fullText": "Even locked up in a detention center on the outskirts of Moscow, Kremlin critic Alexey Navalny continues to be a thorn in Russian President Vladimir Putin's side.",
     "image": "https://cdn.cnn.com/cnnnext/dam/assets/210120111237-restricted-05-putin-palace-navalny-russia-intl-super-tease.jpeg"
-  }
+  },
+  {"id": 11, 
+  "title": "Scientists discover new species of deep-sea creatures", 
+  "preview": "A team of marine biologists aboard a research vessel stumbled upon a previously unknown species of bioluminescent jellyfish at a depth of 3,000 meters.", 
+  "fullText": "A team of marine biologists aboard a research vessel stumbled upon a previously unknown species of bioluminescent jellyfish at a depth of 3,000 meters.", 
+  "image":"https://static.ffx.io/images/$zoom_1.069456778346628%2C$multiply_0.7554%2C$ratio_1.776846%2C$width_1059%2C$x_0%2C$y_0/t_crop_custom/q_86%2Cf_auto/4c6ed5dc46aecc0a1b46f98924b22cfd8da2acd3" 
+},
+
+
+{ "id": 9, 
+"title": "SpaceX launches record-breaking number of satellites in a single mission", 
+"preview": "SpaceX’s Falcon 9 rocket successfully deployed 143 satellites into orbit, breaking the previous record for the most satellites launched in a single mission.", 
+"fullText": "SpaceX’s Falcon 9 rocket successfully deployed 143 satellites into orbit, breaking the previous record for the most satellites launched in a single mission.",  
+"image": "https://static.standard.co.uk/s3fs-public/thumbnails/image/2018/12/04/06/sei42756478.jpg?width=1200&width=1200&auto=webp&quality=75" 
+},
+
+{ "id": 10, 
+"title": "World’s largest solar farm begins operation in the Sahara Desert", 
+"preview": "The Noor Abu Dhabi solar plant, spanning 20 square kilometers, is now operational and expected to power hundreds of thousands of homes.",
+"fullText": "The Noor Abu Dhabi solar plant, spanning 20 square kilometers, is now operational and expected to power hundreds of thousands of homes.",  
+"image":"https://th.bing.com/th/id/R.84b16a9023ff0501d504a2b287ff38a2?rik=%2fux3HB0a7eUuGw&pid=ImgRaw&r=0" 
+}
 ]
