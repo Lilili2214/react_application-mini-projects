@@ -2,14 +2,16 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams, Navigate } from "react-router-dom";
 import ROUTES from "../../app/routes";
+import { selectTopics } from "./topicsSlice";
+import { selectQuizzes } from "../quizzes/quizzesSlice";
 // import selectors
 
 export default function Topic() {
-  const topics = {};  // replace with selector
-  const quizzes = {}; // replace with selector
+  const topics =useSelector(selectTopics);  // replace with selector
+  const quizzes = useSelector(selectQuizzes); // replace with selector
   const { topicId } = useParams();
   const topic = topics[topicId];
-
+  
   if(!topic) {
     return <Navigate to={ROUTES.topicsRoute()} replace/>
   }

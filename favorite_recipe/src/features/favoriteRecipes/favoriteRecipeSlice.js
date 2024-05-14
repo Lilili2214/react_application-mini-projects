@@ -7,6 +7,7 @@ export const favoriteRecipesSlice = createSlice({
     initialState: [],
     reducers:{
         addRecipe: (state, action)=>{
+            console.log("hell",state.favoriteRecipes, action.payload)
             state.push(action.payload)
         },
         removeRecipe: (state, action)=>{
@@ -27,7 +28,7 @@ export const selectFilteredFavoriteRecipes = (state) =>{
         console.error("allRecipes is not an array.");
         return [];
     }
-
+    
    
     return allRecipes.filter((recipe) => 
         recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
