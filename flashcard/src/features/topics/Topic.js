@@ -11,12 +11,12 @@ export default function Topic() {
   const quizzes = useSelector(selectQuizzes); // replace with selector
   const { topicId } = useParams();
   const topic = topics[topicId];
-  
+
   if(!topic) {
     return <Navigate to={ROUTES.topicsRoute()} replace/>
   }
   
-  const quizzesForTopic = topic.quizIds.map((quizId) => quizzes[quizId]);
+  const quizzesForTopic = topic.quizIds.map((quizId) => quizzes[quizId]) 
 
   return (
     <section>

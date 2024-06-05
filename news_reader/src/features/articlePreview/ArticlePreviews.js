@@ -25,6 +25,7 @@ function ArticlePreviews() {
             <h2 className='section-title'>All Articles</h2>
             {articlePreviews.map((article) => (
                 <div key={article.id} onClick={(e) => {
+                    
                     dispatch(loadCurrentArticle(article.id));
                 }}>
                     <ArticleListItem article={article} />

@@ -8,7 +8,7 @@ const store =  configureStore({
   reducer: {
     topics: topicsReducer,
     quizzes: quizzesReducer,
-    cards: cardsReducer
+    cards: cardsReducer,
   },
 });
 export default store;
