@@ -4,7 +4,7 @@ This project is a collection of mini projects aimed at practicing React Redux. E
 
 ## Table of Contents
 
-- [Expense Tracker](#expense-tracker)
+- [Expense Tracker]([#expense-tracker](https://github.com/Lilili2214/react_application-mini-projects/tree/main/expense_tracker))
 - [Favorite Recipe](#favorite-recipe)
 - [Flashcards](#flashcards)
 - [News Reader](#news-reader)
